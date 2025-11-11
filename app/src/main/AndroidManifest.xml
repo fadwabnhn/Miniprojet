@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MinipojetApp">
         <activity
-            nkjkkjk
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

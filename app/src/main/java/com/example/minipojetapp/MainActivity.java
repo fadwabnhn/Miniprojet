@@ -1,4 +1,4 @@
-package com.example.englishapp;
+package com.example.minipojetapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,19 +21,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // ربط العناصر من XML
+        // Bind views from XML
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         signInButton = findViewById(R.id.signInButton);
         signUpButton = findViewById(R.id.signUpButton);
         forgotPasswordText = findViewById(R.id.forgotPasswordText);
 
-        // إعداد الأحداث
+        // Set click listeners
         setupClickListeners();
     }
 
     private void setupClickListeners() {
-        // حدث زر Sign In
+        // Sign In button click
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // حدث زر Sign Up
+        // Sign Up button click
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // حدث نسيت كلمة المرور
+        // Forgot password click
         forgotPasswordText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,35 +62,35 @@ public class MainActivity extends AppCompatActivity {
         String email = emailEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
 
-        // التحقق من الحقول
+        // Validate inputs
         if (email.isEmpty()) {
-            emailEditText.setError("الرجاء إدخال البريد الإلكتروني");
+            emailEditText.setError("Please enter your email");
             emailEditText.requestFocus();
             return;
         }
 
         if (password.isEmpty()) {
-            passwordEditText.setError("الرجاء إدخال كلمة المرور");
+            passwordEditText.setError("Please enter your password");
             passwordEditText.requestFocus();
             return;
         }
 
         if (!isValidEmail(email)) {
-            emailEditText.setError("البريد الإلكتروني غير صحيح");
+            emailEditText.setError("Invalid email address");
             emailEditText.requestFocus();
             return;
         }
 
         if (password.length() < 6) {
-            passwordEditText.setError("كلمة المرور يجب أن تكون 6 أحرف على الأقل");
+            passwordEditText.setError("Password must be at least 6 characters");
             passwordEditText.requestFocus();
             return;
         }
 
-        // هنا يمكنك إضافة كود تسجيل الدخول الفعلي
-        Toast.makeText(this, "جاري تسجيل الدخول...", Toast.LENGTH_SHORT).show();
+        // Here you can add the actual sign-in logic
+        Toast.makeText(this, "Signing in...", Toast.LENGTH_SHORT).show();
 
-        // مثال: الانتقال إلى صفحة أخرى
+        // Example: navigate to another activity
         // Intent intent = new Intent(MainActivity.this, HomeActivity.class);
         // startActivity(intent);
     }
@@ -100,14 +100,14 @@ public class MainActivity extends AppCompatActivity {
         String password = passwordEditText.getText().toString().trim();
 
         if (email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "الرجاء ملء جميع الحقول", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // هنا يمكنك إضافة كود التسجيل الفعلي
-        Toast.makeText(this, "جاري إنشاء حساب جديد...", Toast.LENGTH_SHORT).show();
+        // Here you can add the actual sign-up logic
+        Toast.makeText(this, "Creating a new account...", Toast.LENGTH_SHORT).show();
 
-        // مثال: الانتقال إلى صفحة التسجيل
+        // Example: navigate to sign-up activity
         // Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
         // startActivity(intent);
     }
@@ -116,21 +116,21 @@ public class MainActivity extends AppCompatActivity {
         String email = emailEditText.getText().toString().trim();
 
         if (email.isEmpty()) {
-            Toast.makeText(this, "الرجاء إدخال البريد الإلكتروني أولاً", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter your email first", Toast.LENGTH_SHORT).show();
             emailEditText.requestFocus();
             return;
         }
 
         if (!isValidEmail(email)) {
-            Toast.makeText(this, "البريد الإلكتروني غير صحيح", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // هنا يمكنك إضافة كود استعادة كلمة المرور
-        Toast.makeText(this, "تم إرسال رابط استعادة كلمة المرور", Toast.LENGTH_LONG).show();
+        // Here you can add the password recovery logic
+        Toast.makeText(this, "Password recovery link has been sent", Toast.LENGTH_LONG).show();
     }
 
-    // دالة للتحقق من صحة البريد الإلكتروني
+    // Function to validate email format
     private boolean isValidEmail(String email) {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }

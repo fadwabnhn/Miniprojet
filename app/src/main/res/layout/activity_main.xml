@@ -24,7 +24,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hello! Ready to start your English journey? 🎵"
+                android:text="Hello! Ready to start your English journey? "
                 android:textSize="18sp"
                 android:textColor="#333333"
                 android:textStyle="bold"

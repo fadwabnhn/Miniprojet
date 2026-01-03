@@ -1,14 +1,14 @@
 package com.example.minipojetapp;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -18,30 +18,27 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final android.R.attr R = R;
     private TextInputEditText emailEditText;
     private TextInputEditText passwordEditText;
     private Button signInButton;
     private Button signUpButton;
     private TextView forgotPasswordText;
 
-    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Bind views from XML
+
+        // Bind views
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
-        signInButton = signInButton.findViewById();
+        signInButton = findViewById(R.id.signInButton);
         signUpButton = findViewById(R.id.signUpButton);
-        forgotPasswordText = signInButton.findViewById();
+        forgotPasswordText = findViewById(R.id.forgotPasswordText);
 
-        // Set click listeners
         setupClickListeners();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
     private void setupClickListeners() {
         signInButton.setOnClickListener(v -> handleSignIn());
         signUpButton.setOnClickListener(v -> handleSignUp());
@@ -49,10 +46,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // ---------------- Sign In ----------------
-    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
     private void handleSignIn() {
-        String email = emailEditText.getText().toString().trim();
-        String password = passwordEditText.getText().toString().trim();
+        String email = emailEditText.getText() != null ? emailEditText.getText().toString().trim() : "";
+        String password = passwordEditText.getText() != null ? passwordEditText.getText().toString().trim() : "";
 
         if (email.isEmpty()) {
             emailEditText.setError("Please enter your email");
@@ -79,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         User user = new User(email, password);
-        ApiService api = RetrofitClient.getRetrofitInstance().create(ApiService.class);
-        Call<User> call = api.login(user);
+        ApiService apiService = RetrofitClient.getRetrofitInstance().create(ApiService.class);
+        Call<User> call = apiService.login(user);
 
         call.enqueue(new Callback<User>() {
             @Override
@@ -88,12 +84,11 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     Toast.makeText(MainActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
 
-
-                    Intent intent = new Intent(MainActivity.this, perActivity.class);
+                    Intent intent = new Intent(MainActivity.this, PerActivity.class);
                     startActivity(intent);
-                    finish(); // إغلاق MainActivity
+                    finish();
                 } else {
-                    Toast.makeText(MainActivity.this, "Login failed! Check your credentials.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Login failed!", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -105,10 +100,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // ---------------- Sign Up ----------------
-    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
     private void handleSignUp() {
-        String email = emailEditText.getText().toString().trim();
-        String password = passwordEditText.getText().toString().trim();
+        String email = emailEditText.getText() != null ? emailEditText.getText().toString().trim() : "";
+        String password = passwordEditText.getText() != null ? passwordEditText.getText().toString().trim() : "";
 
         if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
@@ -128,8 +122,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         User user = new User(email, password);
-        ApiService api = RetrofitClient.getRetrofitInstance().create(ApiService.class);
-        Call<User> call = api.signup(user);
+        ApiService apiService = RetrofitClient.getRetrofitInstance().create(ApiService.class);
+        Call<User> call = apiService.signup(user);
 
         call.enqueue(new Callback<User>() {
             @Override
@@ -137,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     Toast.makeText(MainActivity.this, "Signup successful!", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(MainActivity.this, "Signup failed! Try again.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Signup failed!", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -149,13 +143,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // ---------------- Forgot Password ----------------
-    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
     private void handleForgotPassword() {
-        String email = emailEditText.getText().toString().trim();
+        String email = emailEditText.getText() != null ? emailEditText.getText().toString().trim() : "";
 
         if (email.isEmpty()) {
-            Toast.makeText(this, "Please enter your email first", Toast.LENGTH_SHORT).show();
-            emailEditText.requestFocus();
+            Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -164,12 +156,10 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-
-        Toast.makeText(this, "Password recovery link has been sent", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Password recovery link sent", Toast.LENGTH_LONG).show();
     }
 
-    // ---------------- Validate Email ----------------
-    @RequiresApi(api = Build.VERSION_CODES.FROYO)
+    // ---------------- Email Validation ----------------
     private boolean isValidEmail(String email) {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }

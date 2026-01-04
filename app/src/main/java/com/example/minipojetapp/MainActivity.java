@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+
         if (password.isEmpty()) {
             passwordEditText.setError("Please enter your password");
             passwordEditText.requestFocus();

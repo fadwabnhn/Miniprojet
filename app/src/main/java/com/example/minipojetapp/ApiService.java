@@ -12,4 +12,3 @@ public interface ApiService {
     @POST("api/users/login")
     Call<User> login(@Body User user);
 }
-

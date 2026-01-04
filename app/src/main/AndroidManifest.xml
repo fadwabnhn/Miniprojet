@@ -6,7 +6,6 @@
 
 
 
-
     <application
         android:usesCleartextTraffic="true"
         android:allowBackup="true"

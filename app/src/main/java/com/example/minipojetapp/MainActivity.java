@@ -1,15 +1,13 @@
 package com.example.minipojetapp;
 
 import android.content.Intent;
-import android.os.Build;
+
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.textfield.TextInputEditText;
 
 import retrofit2.Call;
@@ -62,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        if (!isValidEmail(email)) {
+        if (isValidEmail(email)) {
             emailEditText.setError("Invalid email address");
             emailEditText.requestFocus();
             return;
@@ -77,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
         User user = new User(email, password);
         ApiService apiService = RetrofitClient.getRetrofitInstance().create(ApiService.class);
         Call<User> call = apiService.login(user);
-
 
 
         call.enqueue(new Callback<User>() {
@@ -111,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        if (!isValidEmail(email)) {
+        if (isValidEmail(email)) {
             emailEditText.setError("Invalid email address");
             emailEditText.requestFocus();
             return;
@@ -153,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        if (!isValidEmail(email)) {
+        if (isValidEmail(email)) {
             Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -163,6 +160,6 @@ public class MainActivity extends AppCompatActivity {
 
     // ---------------- Email Validation ----------------
     private boolean isValidEmail(String email) {
-        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+        return !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 }

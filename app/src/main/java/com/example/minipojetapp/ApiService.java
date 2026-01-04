@@ -6,7 +6,6 @@ import retrofit2.Call;
         import retrofit2.http.POST;
 
 public interface ApiService {
-
     @POST("api/users/signup")
     Call<User> signup(@Body User user);
 

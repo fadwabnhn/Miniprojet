@@ -82,12 +82,17 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     Toast.makeText(MainActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
 
+                    // استلام معرف المستخدم من الاستجابة (افترض أن User يحتوي على getId())
+                    int userId = response.body().getId(); // <-- تأكد أن كلاس User يحتوي على معرف
+
                     Intent intent = new Intent(MainActivity.this, PerActivity.class);
+                    intent.putExtra("USER_ID", userId); // إرسال UserId إلى PerActivity
                     startActivity(intent);
                     finish();
                 } else {
                     Toast.makeText(MainActivity.this, "Login failed!", Toast.LENGTH_SHORT).show();
                 }
+
             }
 
             @Override

@@ -11,5 +11,10 @@ public interface ApiService {
 
     @POST("api/users/login")
     Call<User> login(@Body User user);
+
+    @POST("profile/save")
+
+    Call<Void> saveProfile(@Body ProfileRequest request);
+
 }
 

@@ -14,9 +14,6 @@
         android:theme="@style/Theme.MinipojetApp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".FourthActivity"
-            android:exported="false" />
-        <activity
             android:name=".ThirdActivity"
             android:exported="false" />
         <activity

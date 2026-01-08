@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="purple_500">#6200EE</color>
@@ -17,8 +17,8 @@
     <color name="button_main">#3F51B5</color>
     <color name="main_bg">#F8FBFF</color> <color name="navy_text">#1B2559</color> <color name="streak_yellow">#FFD600</color> <color name="streak_gray">#E0E5F2</color> <color name="quote_yellow_bg">#FFF9C4</color> <color name="card_blue">#E9F3FF</color>
     <color name="card_green">#E6F9F0</color>
-    <color name="card_orange">#FFF2ED</color>
-    <color name="button_blue">#448EF6</color>
+    <color name="card_orange" tools:ignore="DuplicateDefinition">#FFF2ED</color>
+    <color name="button_blue" tools:ignore="DuplicateDefinition">#448EF6</color>
     <color name="header_gradient_center">#DDEBFF</color>
     <color name="bg_fifth">#F5F9FF</color> <color name="card_white">#FFFFFF</color>
     <color name="text_black">#212121</color>
@@ -42,4 +42,15 @@
         <corners android:radius="50dp" />
         <stroke android:width="1dp" android:color="#E0E0E0" />
     </shape>
+    <resources>
+        <color name="v5_gradient_start">#5B86E5</color>
+        <color name="v5_gradient_end">#B993D6</color>
+
+        <color name="v5_card_blue">#6EA2FF</color>
+        <color name="v5_card_yellow">#FFCB42</color>
+        <color name="v5_card_purple">#9B67FF</color>
+
+        <color name="v5_slider_track">#90FFFFFF</color>
+        <color name="v5_btn_yellow">#FFD54F</color>
+    </resources>
 </resources>

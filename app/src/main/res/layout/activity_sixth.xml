@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tvMainTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Your learning strategies"
+            android:textColor="#FFFFFF"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today's goal"
+            android:textColor="#F0F0F0"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMainTitle" />
+
+        <LinearLayout
+            android:id="@+id/shadowingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/tvSubTitle">
+
+            <ImageView
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:src="@drawable/sixth" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:cardBackgroundColor="#4DFFFFFF"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="Shadowing may help you speaking today! ✨"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/strategiesContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/shadowingLayout">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#85A9FF"
+                app:cardCornerRadius="20dp">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="20dp">
+                    <TextView android:id="@+id/i1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🎧" android:textSize="29sp" android:layout_centerVertical="true"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15dp" android:layout_toEndOf="@id/i1" android:text="Listening session" android:textColor="#FFFFFF" android:textStyle="bold" android:layout_centerVertical="true"/>
+                    <androidx.appcompat.widget.SwitchCompat android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:showText="true" android:textOn="ON" android:textOff="OFF" android:checked="true" android:thumbTint="#FFFFFF"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#FFB37C"
+                app:cardCornerRadius="20dp">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="20dp">
+                    <TextView android:id="@+id/i2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🎴" android:textSize="29sp" android:layout_centerVertical="true"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15dp" android:layout_toEndOf="@id/i2" android:text="Vocabulary cards" android:textColor="#FFFFFF" android:textStyle="bold" android:layout_centerVertical="true"/>
+                    <androidx.appcompat.widget.SwitchCompat android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:showText="true" android:textOn="ON" android:textOff="OFF" android:thumbTint="#FFFFFF"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#B194FF"
+                app:cardCornerRadius="20dp">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="20dp">
+                    <TextView android:id="@+id/i3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💬" android:textSize="29sp" android:layout_centerVertical="true"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15dp" android:layout_toEndOf="@id/i3" android:text="Speaking practice" android:textColor="#FFFFFF" android:textStyle="bold" android:layout_centerVertical="true"/>
+                    <androidx.appcompat.widget.SwitchCompat android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:showText="true" android:textOn="ON" android:textOff="OFF" android:checked="true" android:thumbTint="#FFFFFF"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#7ED9A1"
+                app:cardCornerRadius="20dp">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="20dp">
+                    <TextView android:id="@+id/i4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📝" android:textSize="29sp" android:layout_centerVertical="true"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15dp" android:layout_toEndOf="@id/i4" android:text="Grammar quiz" android:textColor="#FFFFFF" android:textStyle="bold" android:layout_centerVertical="true"/>
+                    <androidx.appcompat.widget.SwitchCompat android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:showText="true" android:textOn="ON" android:textOff="OFF" android:thumbTint="#FFFFFF"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#FF8FA3"
+                app:cardCornerRadius="20dp">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="20dp">
+                    <TextView android:id="@+id/i5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📖" android:textSize="29sp" android:layout_centerVertical="true"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15dp" android:layout_toEndOf="@id/i5" android:text="Reading article" android:textColor="#FFFFFF" android:textStyle="bold" android:layout_centerVertical="true"/>
+                    <androidx.appcompat.widget.SwitchCompat android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:showText="true" android:textOn="ON" android:textOff="OFF" android:checked="true" android:thumbTint="#FFFFFF"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="#70CFFF"
+                app:cardCornerRadius="20dp">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="20dp">
+                    <TextView android:id="@+id/i6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🤖" android:textSize="29sp" android:layout_centerVertical="true"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="15dp" android:layout_toEndOf="@id/i6" android:text="AI Chat coach" android:textColor="#FFFFFF" android:textStyle="bold" android:layout_centerVertical="true"/>
+                    <androidx.appcompat.widget.SwitchCompat android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:showText="true" android:textOn="ON" android:textOff="OFF" android:thumbTint="#FFFFFF"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnConfirmStrategy"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#FFD54F"
+            android:text="Save and execute"
+            android:textColor="#424242"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cornerRadius="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/strategiesContainer" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

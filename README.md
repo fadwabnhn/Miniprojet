@@ -1,17 +1,17 @@
 Mini Projet 
 
 App
-Projet Android Studio
+-Projet Android Studio
 
 Demo Project
- dossier de démon
+ -dossier de démon
 
  Documentation
 - Rapport PDF
 
 
  Design
-       Lien Figma
+ - Lien Figma
 
  Video
-vidéos de démonstration
+  -vidéos de démonstration

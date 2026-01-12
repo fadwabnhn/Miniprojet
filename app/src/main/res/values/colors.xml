@@ -5,17 +5,19 @@
     <color name="purple_500">#6200EE</color>
     <color name="dash_blue">#E3F2FD</color>
     <color name="card_blue">#E1F5FE</color>
-    <color name="card_green">#E8F5E9</color>
-    <color name="card_orange">#FFF3E0</color>
-    <color name="button_blue">#3F51B5</color>
+    <color name="card_gree">#E8F5E9</color>
+    <color name="card_orang">#FFF3E0</color>
+    <color name="button_blu">#3F51B5</color>
     <color name="text_dark">#1A237E</color>
     <color name="bg_light_blue">#F5F9FF</color>
     <color name="text_navy">#1A237E</color>
-    <color name="streak_yellow">#FFD54F</color>
+    <color name="streak_yello">#FFD54F</color>
     <color name="card_quote_bg">#FFF9C4</color>
     <color name="tile_blue">#E3F2FD</color>
     <color name="button_main">#3F51B5</color>
-    <color name="main_bg">#F8FBFF</color> <color name="navy_text">#1B2559</color> <color name="streak_yellow">#FFD600</color> <color name="streak_gray">#E0E5F2</color> <color name="quote_yellow_bg">#FFF9C4</color> <color name="card_blue">#E9F3FF</color>
+    <color name="main_bg">#F8FBFF</color> <color name="navy_text">#1B2559</color>
+    <color name="streak_yellow">#FFD600</color> <color name="streak_gray">#E0E5F2</color>
+    <color name="quote_yellow_bg">#FFF9C4</color> <color name="card_blu">#E9F3FF</color>
     <color name="card_green">#E6F9F0</color>
     <color name="card_orange" tools:ignore="DuplicateDefinition">#FFF2ED</color>
     <color name="button_blue" tools:ignore="DuplicateDefinition">#448EF6</color>
@@ -30,19 +32,20 @@
     <color name="card_listening">#6599FF</color>
     <color name="card_speaking">#FFD54F</color>
     <color name="card_writing">#B388FF</color>
-    <resources>
-        <color name="bg_start">#628EFF</color> <color name="bg_end">#D1B5FF</color>   <color name="card_blue_active">#7DA9FF</color>   <color name="card_yellow_active">#FFD465</color> <color name="card_purple_active">#B08BFF</color> <color name="text_white">#FFFFFF</color>
-        <color name="text_dark_gray">#4E4E4E</color> <color name="seekbar_track">#E0E0E0</color>
+
+        <color name="bg_start">#628EFF</color>
+        <color name="bg_end">#D1B5FF</color>
+        <color name="card_blue_active">#7DA9FF</color>
+        <color name="card_yellow_active">#FFD465</color>
+        <color name="card_purple_active">#B08BFF</color>
+        <color name="text_white">#FFFFFF</color>
+        <color name="text_dark_gray">#4E4E4E</color>
+        <color name="seekbar_track">#E0E0E0</color>
         <color name="seekbar_thumb">#FFFFFF</color>
-    </resources>
+
     <color name="card_reading">#4A90E2</color>
     <color name="button_yellow">#FFD54F</color>
-    <shape xmlns:android="http://schemas.android.com/apk/res/android">
-        <solid android:color="#FFFFFF" />
-        <corners android:radius="50dp" />
-        <stroke android:width="1dp" android:color="#E0E0E0" />
-    </shape>
-    <resources>
+
         <color name="v5_gradient_start">#5B86E5</color>
         <color name="v5_gradient_end">#B993D6</color>
 
@@ -52,5 +55,5 @@
 
         <color name="v5_slider_track">#90FFFFFF</color>
         <color name="v5_btn_yellow">#FFD54F</color>
-    </resources>
+
 </resources>

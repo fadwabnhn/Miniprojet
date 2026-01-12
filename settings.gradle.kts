@@ -16,4 +16,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "Mini projet app"
 include(":app")
- 
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+    }}
+

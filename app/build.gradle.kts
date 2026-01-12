@@ -16,7 +16,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
-            useSupportLibrary =true
+            useSupportLibrary = true
         }
     }
 
@@ -42,6 +42,7 @@ android {
     buildFeatures {
         compose = true
     }
+
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.8"
     }
@@ -53,15 +54,13 @@ android {
     }
 }
 
-
 /* ✅ هنا المكان الصحيح لـ configurations */
 configurations.configureEach {
     exclude(group = "androidx.navigationevent")
 }
 
- dependencies {
-
-
+dependencies {
+    // AndroidX الأساسي (مستقر)
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
@@ -94,6 +93,5 @@ configurations.configureEach {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-    // BouncyCastle
-    implementation("org.bouncycastle:bcprov-jdk15to18:1.76")
+    
 }

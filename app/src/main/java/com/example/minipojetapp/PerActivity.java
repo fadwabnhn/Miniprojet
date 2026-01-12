@@ -85,9 +85,11 @@ public class PerActivity extends AppCompatActivity {
                         Toast.makeText(PerActivity.this,
                                 "Profile saved successfully",
                                 Toast.LENGTH_SHORT).show();
+                        UserSession.userId = userId;
 
                         Intent intent =
                                 new Intent(PerActivity.this, ThirdActivity.class);
+                        intent.putExtra("USER_ID", userId);
                         intent.putExtra("USER_NAME", name);
                         intent.putExtra("USER_LEVEL", level);
                         startActivity(intent);

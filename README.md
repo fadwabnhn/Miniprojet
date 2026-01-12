@@ -4,7 +4,7 @@ App
 
 - Projet Android Studio
 
-Demo Project
+Demo 
  - dossier de démon
 
  Documentation
